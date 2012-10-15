@@ -54,7 +54,7 @@ class EdifyGenerator(edify_generator.EdifyGenerator):
       self.script.append('assert(run_program("/tmp/updater.sh", "cdma") == 0);')
 
     def RunBackup(self, command):
-      edify_generator.EdifyGenerator.RunBackup(self, command)
+        edify_generator.EdifyGenerator.RunBackup(self, command)
 
     def WriteBMLoverMTD(self, partition, partition_start_block, reservoirpartition, reservoir_start_block, image):
       """Write the given package file into the given partition."""
