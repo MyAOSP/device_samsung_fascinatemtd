@@ -43,15 +43,14 @@
 PRODUCT_COPY_FILES := \
 	device/samsung/fascinatemtd/vold.fstab:system/etc/vold.fstab \
 	device/samsung/aries-common/egl.cfg:system/lib/egl/egl.cfg \
-	device/samsung/aries-common/mxt224_ts_input.idc:system/usr/idc/mxt224_ts_input.idc \
-	device/samsung/aries-common/main.conf:system/etc/bluetooth/main.conf
+	device/samsung/aries-common/mxt224_ts_input.idc:system/usr/idc/mxt224_ts_input.idc
 
 # Init files
 PRODUCT_COPY_FILES += \
 	device/samsung/fascinatemtd/init.aries.rc:root/init.aries.rc \
 	device/samsung/aries-common/init.aries.usb.rc:root/init.aries.usb.rc \
 	device/samsung/aries-common/init.aries.usb.rc:recovery/root/usb.rc \
-	device/samsung/fascinatemtd/lpm.rc:root/lpm.rc \
+	device/samsung/aries-common/lpm.rc:root/lpm.rc \
 	device/samsung/fascinatemtd/ueventd.aries.rc:root/ueventd.aries.rc \
 	device/samsung/aries-common/fstab.aries:root/fstab.aries \
 	device/samsung/aries-common/setupdatadata.sh:root/sbin/setupdatadata.sh
@@ -76,6 +75,10 @@ PRODUCT_PACKAGES += \
 	make_ext4fs \
 	setup_fs \
 	bml_over_mtd
+
+# BT MAC fix
+PRODUCT_PACKAGES += \
+	bdaddr_read-cdma
 
 # Usb accessory
 PRODUCT_PACKAGES += \
@@ -118,7 +121,8 @@ PRODUCT_PACKAGES += \
 
 # Device-specific packages
 PRODUCT_PACKAGES += \
-	AriesParts
+	AriesParts \
+	Torch
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -133,7 +137,6 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
 	frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
 	frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-	frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
 	frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
 	frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
 	frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
@@ -148,23 +151,23 @@ PRODUCT_PROPERTY_OVERRIDES := \
 
 # Generic CDMA stuff
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.telephony.default_network=4 \
-    ro.ril.def.agps.mode=2 \
-    ro.cdma.homesystem=64,65,76,77,78,79,80,81,82,83 \
-    ro.cdma.data_retry_config=default_randomization=2000,0,0,120000,180000,540000,960000 \
-    ro.cdma.otaspnumschema=SELC,3,00,07,80,87,88,99 \
-    ro.config.vc_call_vol_steps=15 \
-    ro.telephony.call_ring.multiple=false \
-    ro.telephony.call_ring.delay=3000 \
-    net.cdma.pppd.authtype=require-chap \
-    net.cdma.datalinkinterface=/dev/ttyCDMA0 \
-    net.cdma.ppp.interface=ppp0 \
-    net.connectivity.type=CDMA1 \
-    net.interfaces.defaultroute=cdma \
-    mobiledata.interfaces=ppp0 \
-    ro.ril.samsung_cdma=true \
-    ro.telephony.ril_class=SamsungRIL \
-    ro.telephony.ril.v3=datacall
+       ro.telephony.default_network=4 \
+       ro.ril.def.agps.mode=2 \
+       ro.cdma.homesystem=64,65,76,77,78,79,80,81,82,83 \
+       ro.cdma.data_retry_config=default_randomization=2000,0,0,120000,180000,540000,960000 \
+       ro.cdma.otaspnumschema=SELC,3,00,07,80,87,88,99 \
+       ro.config.vc_call_vol_steps=15 \
+       ro.telephony.call_ring.multiple=false \
+       ro.telephony.call_ring.delay=3000 \
+       net.cdma.pppd.authtype=require-chap \
+       net.cdma.datalinkinterface=/dev/ttyCDMA0 \
+       net.cdma.ppp.interface=ppp0 \
+       net.connectivity.type=CDMA1 \
+       net.interfaces.defaultroute=cdma \
+       mobiledata.interfaces=ppp0 \
+       ro.ril.samsung_cdma=true \
+       ro.telephony.ril_class=SamsungExynos3RIL \
+       ro.telephony.ril.v3=datacall
 
 # Vzw
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -194,13 +197,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vold.umsdirtyratio=20
 
-# keep dalvik on /data partition
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.dexopt-data-only=1
-
 # enable repeatable keys in cwm
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.cwm.enable_key_repeat=true
+    ro.cwm.enable_key_repeat=true \
+    ro.cwm.repeatable_keys=102,114,115,139
 
 # Set default USB interface
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
