@@ -112,8 +112,7 @@ PRODUCT_PACKAGES += \
 	power.s5pc110
 
 PRODUCT_COPY_FILES += \
-    device/samsung/fascinatemtd/libaudio/audio_policy.conf:system/etc/audio_policy.conf \
-    vendor/baked/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
+	device/samsung/fascinatemtd/libaudio/audio_policy.conf:system/etc/audio_policy.conf
 
 # Libs
 PRODUCT_PACKAGES += \
@@ -169,10 +168,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
        ro.telephony.ril_class=SamsungExynos3RIL \
        ro.telephony.ril.v3=datacall
 
-# Vzw
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.com.google.clientidbase=android-verizon
-
 # These are the hardware-specific settings that are stored in system properties.
 # Note that the only such settings should be the ones that are too low-level to
 # be reachable from resources or other mechanisms.
@@ -186,7 +181,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
         ro.com.google.networklocation=1
 
 # Extended JNI checks
-# The extended JNI checks will cause the system to run more slowly, but they can spot a variety of nasty bugs
+# The extended JNI checks will cause the system to run more slowly, but they can spot a variety of nasty bugs 
 # before they have a chance to cause problems.
 # Default=true for development builds, set by android buildsystem.
 PRODUCT_PROPERTY_OVERRIDES += \
