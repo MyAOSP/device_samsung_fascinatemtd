@@ -35,15 +35,15 @@
 # but not to the original vendor tree. Be sure to update both.
 
 DEVICE_PACKAGE_OVERLAYS := device/samsung/fascinatemtd/overlay \
-	device/samsung/aries-common/overlay
+    device/samsung/aries-common/overlay
 
 $(call inherit-product, device/samsung/fascinatemtd/device.mk)
 
 # Verizon cdma stuff
 PRODUCT_PROPERTY_OVERRIDES += \
-       ro.cdma.home.operator.numeric=310004 \
-       ro.cdma.home.operator.alpha=Verizon \
-       net.cdma.pppd.user=user[SPACE]VerizonWireless
+    ro.cdma.home.operator.numeric=310004 \
+    ro.cdma.home.operator.alpha=Verizon \
+    net.cdma.pppd.user=user[SPACE]VerizonWireless
 
 TARGET_OTA_ASSERT_DEVICE := aries,fascinate,fascinatemtd,SCH-I500
 
