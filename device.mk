@@ -41,107 +41,106 @@
 
 # These are the hardware-specific configuration files
 PRODUCT_COPY_FILES := \
-    device/samsung/fascinatemtd/vold.fstab:system/etc/vold.fstab \
-    device/samsung/aries-common/egl.cfg:system/lib/egl/egl.cfg \
-    device/samsung/aries-common/mxt224_ts_input.idc:system/usr/idc/mxt224_ts_input.idc
+	device/samsung/fascinatemtd/vold.fstab:system/etc/vold.fstab \
+	device/samsung/aries-common/egl.cfg:system/lib/egl/egl.cfg \
+	device/samsung/aries-common/mxt224_ts_input.idc:system/usr/idc/mxt224_ts_input.idc
 
 # Init files
 PRODUCT_COPY_FILES += \
-    device/samsung/fascinatemtd/init.aries.rc:root/init.aries.rc \
-    device/samsung/aries-common/init.aries.usb.rc:root/init.aries.usb.rc \
-    device/samsung/aries-common/init.aries.usb.rc:recovery/root/usb.rc \
-    device/samsung/aries-common/lpm.rc:root/lpm.rc \
-    device/samsung/fascinatemtd/ueventd.aries.rc:root/ueventd.aries.rc \
-    device/samsung/aries-common/fstab.aries:root/fstab.aries \
-    device/samsung/aries-common/setupdatadata.sh:root/sbin/setupdatadata.sh
+	device/samsung/fascinatemtd/init.aries.rc:root/init.aries.rc \
+	device/samsung/aries-common/init.aries.usb.rc:root/init.aries.usb.rc \
+	device/samsung/aries-common/init.aries.usb.rc:recovery/root/usb.rc \
+	device/samsung/aries-common/lpm.rc:root/lpm.rc \
+	device/samsung/fascinatemtd/ueventd.aries.rc:root/ueventd.aries.rc \
+	device/samsung/aries-common/fstab.aries:root/fstab.aries \
+	device/samsung/aries-common/setupdatadata.sh:root/sbin/setupdatadata.sh
 
 # Prebuilt kl keymaps
 PRODUCT_COPY_FILES += \
-    device/samsung/aries-common/cypress-touchkey.kl:system/usr/keylayout/cypress-touchkey.kl \
-    device/samsung/aries-common/sec_jack.kl:system/usr/keylayout/sec_jack.kl \
-    device/samsung/aries-common/s3c-keypad.kl:system/usr/keylayout/s3c-keypad.kl
+	device/samsung/aries-common/cypress-touchkey.kl:system/usr/keylayout/cypress-touchkey.kl \
+	device/samsung/aries-common/sec_jack.kl:system/usr/keylayout/sec_jack.kl \
+	device/samsung/aries-common/s3c-keypad.kl:system/usr/keylayout/s3c-keypad.kl
 
 # ppp
 PRODUCT_COPY_FILES += \
-    device/samsung/fascinatemtd/ip-up:system/etc/ppp/ip-up
+	device/samsung/fascinatemtd/ip-up:system/etc/ppp/ip-up
 
 # Generated kcm keymaps
 PRODUCT_PACKAGES := \
-    cypress-touchkey.kcm \
-    s3c-keypad.kcm
+       cypress-touchkey.kcm \
+       s3c-keypad.kcm
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
-    make_ext4fs \
-    setup_fs \
-    bml_over_mtd
+	make_ext4fs \
+	setup_fs \
+	bml_over_mtd
 
 # BT MAC fix
 PRODUCT_PACKAGES += \
-    bdaddr_read
+	bdaddr_read
 
 # Usb accessory
 PRODUCT_PACKAGES += \
-    com.android.future.usb.accessory
+	com.android.future.usb.accessory
 
 # These are the OpenMAX IL configuration files
 PRODUCT_COPY_FILES += \
-    hardware/samsung/exynos3/s5pc110/sec_mm/sec_omx/sec_omx_core/secomxregistry:system/etc/secomxregistry \
-    device/samsung/aries-common/media_profiles.xml:system/etc/media_profiles.xml \
-    device/samsung/aries-common/media_codecs.xml:system/etc/media_codecs.xml
+	hardware/samsung/exynos3/s5pc110/sec_mm/sec_omx/sec_omx_core/secomxregistry:system/etc/secomxregistry \
+	device/samsung/aries-common/media_profiles.xml:system/etc/media_profiles.xml \
+	device/samsung/aries-common/media_codecs.xml:system/etc/media_codecs.xml
 
 # These are the OpenMAX IL modules
 PRODUCT_PACKAGES += \
-    libSEC_OMX_Core \
-    libOMX.SEC.AVC.Decoder \
-    libOMX.SEC.M4V.Decoder \
-    libOMX.SEC.M4V.Encoder \
-    libOMX.SEC.AVC.Encoder
+	libSEC_OMX_Core \
+	libOMX.SEC.AVC.Decoder \
+	libOMX.SEC.M4V.Decoder \
+	libOMX.SEC.M4V.Encoder \
+	libOMX.SEC.AVC.Encoder
 
 # Misc other modules
 PRODUCT_PACKAGES += \
-    lights.aries \
-    hwcomposer.s5pc110 \
-    camera.aries \
-    audio.primary.aries \
-    audio_policy.aries \
-    audio.a2dp.default \
-    audio.usb.default \
-    libs3cjpeg \
-    sensors.aries \
-    power.s5pc110
+	lights.aries \
+	hwcomposer.s5pc110 \
+	camera.aries \
+	audio.primary.aries \
+	audio.a2dp.default \
+	audio.usb.default \
+	libs3cjpeg \
+	sensors.aries \
+	power.s5pc110
 
 PRODUCT_COPY_FILES += \
-    device/samsung/fascinatemtd/libaudio/audio_policy.conf:system/etc/audio_policy.conf
+	device/samsung/fascinatemtd/libaudio/audio_policy.conf:system/etc/audio_policy.conf
 
 # Libs
 PRODUCT_PACKAGES += \
-    libstagefrighthw
+	libstagefrighthw
 
 # Device-specific packages
 PRODUCT_PACKAGES += \
-    AriesParts \
-    Torch
+	AriesParts \
+	Torch
 
 # Charger
 PRODUCT_PACKAGES += \
-    charger \
-    charger_res_images
+	charger \
+	charger_res_images
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-    frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
-    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
-    frameworks/native/data/etc/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
-    frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
-    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
-    frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
-    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
-    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
-    frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
-    packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
+	frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
+	frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
+	frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
+	frameworks/native/data/etc/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
+	frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
+	frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+	frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
+	frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
+	frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
+	frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
+	frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
+	packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
 
 # The OpenGL ES API level that is natively supported by this device.
 # This is a 16.16 fixed point number
@@ -150,36 +149,36 @@ PRODUCT_PROPERTY_OVERRIDES := \
 
 # Generic CDMA stuff
 PRODUCT_PROPERTY_OVERRIDES += \
-   ro.telephony.default_network=4 \
-   ro.ril.def.agps.mode=2 \
-   ro.cdma.homesystem=64,65,76,77,78,79,80,81,82,83 \
-   ro.cdma.data_retry_config=default_randomization=2000,0,0,120000,180000,540000,960000 \
-   ro.cdma.otaspnumschema=SELC,3,00,07,80,87,88,99 \
-   ro.config.vc_call_vol_steps=15 \
-   net.cdma.pppd.authtype=require-chap \
-   net.cdma.datalinkinterface=/dev/ttyCDMA0 \
-   net.cdma.ppp.interface=ppp0 \
-   net.connectivity.type=CDMA1 \
-   net.interfaces.defaultroute=cdma \
-   mobiledata.interfaces=ppp0 \
-   ro.ril.samsung_cdma=true \
-   ro.telephony.ril_class=SamsungExynos3RIL \
-   ro.telephony.ril.v3=datacall
+       ro.telephony.default_network=4 \
+       ro.ril.def.agps.mode=2 \
+       ro.cdma.homesystem=64,65,76,77,78,79,80,81,82,83 \
+       ro.cdma.data_retry_config=default_randomization=2000,0,0,120000,180000,540000,960000 \
+       ro.cdma.otaspnumschema=SELC,3,00,07,80,87,88,99 \
+       ro.config.vc_call_vol_steps=15 \
+       net.cdma.pppd.authtype=require-chap \
+       net.cdma.datalinkinterface=/dev/ttyCDMA0 \
+       net.cdma.ppp.interface=ppp0 \
+       net.connectivity.type=CDMA1 \
+       net.interfaces.defaultroute=cdma \
+       mobiledata.interfaces=ppp0 \
+       ro.ril.samsung_cdma=true \
+       ro.telephony.ril_class=SamsungExynos3RIL \
+       ro.telephony.ril.v3=datacall
 
 # These are the hardware-specific settings that are stored in system properties.
 # Note that the only such settings should be the ones that are too low-level to
 # be reachable from resources or other mechanisms.
 PRODUCT_PROPERTY_OVERRIDES += \
-   wifi.interface=wlan0
+       wifi.interface=wlan0
 
 # enable Google-specific location features,
 # like NetworkLocationProvider and LocationCollector
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.com.google.locationfeatures=1 \
-    ro.com.google.networklocation=1
+        ro.com.google.locationfeatures=1 \
+        ro.com.google.networklocation=1
 
 # Extended JNI checks
-# The extended JNI checks will cause the system to run more slowly, but they can spot a variety of nasty bugs
+# The extended JNI checks will cause the system to run more slowly, but they can spot a variety of nasty bugs 
 # before they have a chance to cause problems.
 # Default=true for development builds, set by android buildsystem.
 PRODUCT_PROPERTY_OVERRIDES += \
