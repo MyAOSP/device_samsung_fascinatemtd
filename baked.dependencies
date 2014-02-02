@@ -1,14 +1,17 @@
 [
   {
-    "repository": "android_device_samsung_aries-common",
-    "target_path": "device/samsung/aries-common"
+    "repository": "TeamBAKED/device_samsung_aries-common",
+    "target_path": "device/samsung/aries-common",
+    "branch": "kk-4.4"
   },
   {
-    "repository": "android_kernel_samsung_aries",
-    "target_path": "kernel/samsung/aries"
+    "repository": "CyanogenMod/android_kernel_samsung_aries",
+    "target_path": "kernel/samsung/aries",
+    "branch": "cm-11.0"
   },
   {
-    "repository": "android_hardware_samsung",
-    "target_path": "hardware/samsung"
+    "repository": "TeamBAKED/hardware_samsung",
+    "target_path": "hardware/samsung",
+    "branch": "kk-4.4"
   }
 ]
